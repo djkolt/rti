@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<title><?php Core_Page::instance()->showTitle()?></title>
+    <meta name="description" CONTENT="<?php Core_Page::instance()->showDescription()?>" />
+    <link REL="canonical" HREF="<?=Core_Utils::getCanonicalUrl(); ?>"/>
+    <link REL="shortcut icon" HREF="/images/favicon.png" TYPE="image/png" />
+    <meta HTTP-EQUIV="X-UA-Compatible" CONTENT="IE=edge,chrome=1"> 
+	<meta name="viewport" CONTENT="width=device-width, initial-scale=1.0">
+	<meta CONTENT="text/html; charset=<?php echo SITE_CODING?>" HTTP-EQUIV="Content-Type" />
+    <meta name="verify-reformal" CONTENT="dbddb8e1866c4465bf9c3038" />
+    <meta HTTP-EQUIV="content-language" CONTENT="ru" />
+
+	<link REL="stylesheet" TYPE="text/css" HREF="/templates/template1/bootstrap/css/bootstrap.min.css" MEDIA="screen" />
+	<?php Core_Page::instance()->showCss()?>
+	
+	<!--[if IE]>
+	<style>.header input[type=text],.header input[type=password]{border:1px solid #eee;height:20px}</style>
+	<![endif]-->
+	<?php Core_Browser::check()?>
+
+	<link REL="shortcut icon" HREF="/favicon.ico" />
+	<link REL="alternate" TYPE="application/rss+xml" title="RSS Feed" HREF="/contacts/info/news/rss/" />
+
+	<!-- jQuery -->
+	<script TYPE="text/javascript" SRC="/hostcmsfiles/jquery/jquery.js"></script>
+    <script TYPE="text/javascript" SRC="/templates/template1/hostcms.js"></script>
+    <script TYPE="text/javascript" SRC="/templates/template1/bootstrap/js/bootstrap.min.js"></script>
+	<script TYPE="text/javascript" SRC="/templates/template1/modernizr.custom.js"></script>
+	<script TYPE="text/javascript" SRC="/hostcmsfiles/main.js"></script>
+
+
+</head>
+<body>
+
+
+<div CLASS="wrapper">
+    <header>
+        <div CLASS="container-fluid">
+            <div CLASS="row-fluid">
+                <div CLASS="span3 logo"><a HREF="http://rtirus.ru" title="Главная"><img itemprop="logo" src="/images/rtilogo.png"  alt="логотип" </a></div>
+                <div CLASS="span6 tel"><span>Санкт-Петербург, Полюстровский пр. 68</span><br>8 812 748-27-54<br></div>
+                <!-- <div class="span3 tel"><span>Санкт-Петербург</span><br>8 812 748-27-54</div> -->
+                <div CLASS="span3 cartMin"><span><a HREF="mailto:info@rtirus.ru">info@rtirus.ru </a></span><br>
+                	<?php
+					// Краткая корзина
+					$Shop_Cart_Controller_Show = new Shop_Cart_Controller_Show(
+						Core_Entity::factory('Shop', 1)
+					);
+					$Shop_Cart_Controller_Show
+						->xsl(
+							Core_Entity::factory('Xsl')->getByName('МагазинКорзинаКраткая')
+						)
+						->couponText(isset($_SESSION) ? Core_Array::get($_SESSION, 'coupon_text') : '')
+						->show();
+					?>
+                </div>
+                
+            </div>
+            <div CLASS="row-fluid">
+            	
+                <?php
+                // Верхнее меню
+                $Structure_Controller_Show = new Structure_Controller_Show(
+                    Core_Entity::factory('Site', CURRENT_SITE));
+            
+                $Structure_Controller_Show->xsl(
+                    Core_Entity::factory('Xsl')->getByName('ВерхнееМеню')
+                )
+                ->menu(1)
+                ->showShopGroups(TRUE)
+                ->showInformationsystemGroups(TRUE)
+                ->showProperties(TRUE)
+                ->show();
+                ?>
+            </div>
+        </div>
+    </header>
+
+    <?php
+    Core_Page::instance()->execute();
+    ?>
+    <div CLASS="footer-push"></div>
+</div>
+<footer>
+	<div CLASS="container-fluid">
+    	<div CLASS="row-fluid">
+        	<div CLASS="span3">© 2017 ТД Амарид | <a HREF="/map/">Карта сайта</a><br>
+            	
+<!--LiveInternet counter--><script TYPE="text/javascript"><!--
+document.write("<a href='http://www.liveinternet.ru/click' "+
+"target=_blank><img src='//counter.yadro.ru/hit?t44.1;r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";"+Math.random()+
+"' alt='' title='LiveInternet' "+
+"border='0' width='31' height='31'><\/a>")
+//--></script><!--/LiveInternet-->
+              
+            </div>
+            <div CLASS="span6 tel"><span>Санкт-Петербург</span><br>8 812 748-27-54</div>
+            <!-- <div class="span3 tel"><span>Санкт-Петербург</span><br>8 812 748-27-54</div> -->
+            <div CLASS="span3 mnogonoga"><img SRC="/images/mnogonogaLogo.png" ALT="Mnogonoga">
+                    <a HREF="https://www.ihc.ru/?ref=247292" title="Работает на IHC">Работает на IHC</a>
+</div>
+        </div>
+    </div>
+</footer>
+<script TYPE="text/javascript" SRC="/templates/template1/cbpHorizontalMenu.min.js"></script>
+<script>
+$(function() {
+	cbpHorizontalMenu.init();
+});
+</script>
+
+
+<!-- Yandex.Metrika counter -->
+<script TYPE="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter23881093 = new Ya.Metrika({id:23881093,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img SRC="//mc.yandex.ru/watch/23881093" STYLE="position:absolute; left:-9999px;" ALT="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-50241039-1', 'rtirus.ru');
+  ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
