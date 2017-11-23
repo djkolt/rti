@@ -28,11 +28,8 @@
     <script TYPE="text/javascript" SRC="/templates/template1/bootstrap/js/bootstrap.min.js"></script>
 	<script TYPE="text/javascript" SRC="/templates/template1/modernizr.custom.js"></script>
 	<script TYPE="text/javascript" SRC="/hostcmsfiles/main.js"></script>
-
-
 </head>
 <body>
-
 
 <div CLASS="wrapper">
     <header>
@@ -54,8 +51,7 @@
 						->couponText(isset($_SESSION) ? Core_Array::get($_SESSION, 'coupon_text') : '')
 						->show();
 					?>
-                </div>
-                
+                </div> 
             </div>
             <div CLASS="row-fluid">
             	
@@ -82,31 +78,14 @@
     ?>
     <div CLASS="footer-push"></div>
 </div>
+
 <footer>
-	<div CLASS="container-fluid">
-    	<div CLASS="row-fluid">
-        	<div CLASS="span3">© 2017 ТД Амарид | <a HREF="/map/">Карта сайта</a><br>
-            	
-<!--LiveInternet counter--><script TYPE="text/javascript"><!--
-document.write("<a href='http://www.liveinternet.ru/click' "+
-"target=_blank><img src='//counter.yadro.ru/hit?t44.1;r"+
-escape(document.referrer)+((typeof(screen)=="undefined")?"":
-";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
-screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
-";"+Math.random()+
-"' alt='' title='LiveInternet' "+
-"border='0' width='31' height='31'><\/a>")
-//--></script><!--/LiveInternet-->
-              
-            </div>
-            <div CLASS="span6 tel"><span>Санкт-Петербург</span><br>8 812 748-27-54</div>
-            <!-- <div class="span3 tel"><span>Санкт-Петербург</span><br>8 812 748-27-54</div> -->
-            <div CLASS="span3 mnogonoga"><img SRC="/images/mnogonogaLogo.png" ALT="Mnogonoga">
-                    <a HREF="https://www.ihc.ru/?ref=247292" title="Работает на IHC">Работает на IHC</a>
-</div>
-        </div>
-    </div>
+	<div CLASS="span3">© 2017 ТД Амарид</div>
+    <a HREF="/map/">Карта сайта</a><br>
+    <div CLASS="span6 tel"><span>Санкт-Петербург</span><br>8 812 748-27-54</div>
 </footer>
+
+
 <script TYPE="text/javascript" SRC="/templates/template1/cbpHorizontalMenu.min.js"></script>
 <script>
 $(function() {
